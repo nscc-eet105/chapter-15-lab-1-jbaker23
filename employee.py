@@ -2,21 +2,9 @@ from dataclasses import dataclass
 
 @dataclass
 class Employee:
-    _Employee__name: str
-    _Employee__hours_worked: float
-    _Employee__hourly_rate: float
-
-    @property
-    def name(self):
-        return self._Employee__name
-
-    @property
-    def hours_worked(self):
-        return self._Employee__hours_worked
-
-    @property
-    def hourly_rate(self):
-        return self._Employee__hourly_rate
+    name: str
+    hours_worked: float
+    hourly_rate: float
 
     def calc_pay(self):
         return self.hours_worked * self.hourly_rate
@@ -24,16 +12,8 @@ class Employee:
 
 @dataclass
 class Salesperson(Employee):
-    _Salesperson__weekly_sales: float
-    _Salesperson__commission_percentage: float
-
-    @property
-    def weekly_sales(self):
-        return self._Salesperson__weekly_sales
-
-    @property
-    def commission_percentage(self):
-        return self._Salesperson__commission_percentage
+    weekly_sales: float
+    commission_percentage: float
 
     def calc_pay(self):
         base = super().calc_pay()
